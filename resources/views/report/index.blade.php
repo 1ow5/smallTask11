@@ -15,10 +15,20 @@
 </head>
 <body>
     <header>
-
+        <div class="headerWrapper bg-white w-full h-[100px] flex justify-center">
+            <div class="headerContainer w-[1260px] flex justify-between">
+                <div class="imgContainer">
+                    <img src="{{ asset('../../../../../storage/app/public/image/noViolent.svg') alt="Image">
+                </div>
+                <div class="userContainer"></div>
+            </div>
+            
+        </div>
     </header>
-    <main>
-
+    <main class="mainWrapper bg-blue-300 flex h-[850px] justify-center">
+        <div class="mainContainer w-[1260px] bg-blue-400 flex">
+            
+        </div>
     </main>
     <footer>
         
