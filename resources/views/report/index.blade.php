@@ -16,9 +16,9 @@
 <body>
     <header>
         <div class="headerWrapper bg-white w-full h-[100px] flex justify-center">
-            <div class="headerContainer w-[1260px] flex justify-between">
-                <div class="imgContainer">
-                    <img src="{{ asset('../../../../../storage/app/public/image/noViolent.svg') alt="Image">
+            <div class="headerContainer w-[1260px] flex justify-between items-center">
+                <div class="imgContainer ">
+                    <img src="{{ Vite::asset('resources/img/noViolent.svg') }}"alt="Image">
                 </div>
                 <div class="userContainer"></div>
             </div>
