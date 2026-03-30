@@ -22,12 +22,42 @@
                 </div>
                 <div class="userContainer"></div>
             </div>
-            
         </div>
     </header>
-    <main class="mainWrapper bg-blue-300 flex h-[850px] justify-center">
-        <div class="mainContainer w-[1260px] bg-blue-400 flex">
-            
+    <main class="mainWrapper bg-blue-300 flex  h-[850px] justify-center">
+        <div class="mainContainer w-[1260px] bg-blue-400 flex flex-wrap justify-between items-center">
+            @foreach ($reports as $report)
+            @if($report->id < 7)
+            <div class="cardWrapper w-[380px] h-[320px]  flex bg-white rounded-xl justify-center  items-center">
+                <div class="cardContainer w-[330px] h-[260px] flex flex-col justify-between  ">
+                    <div class="headerCard w-[330px] h-[55px] flex justify-between">
+                        <div class="headerCardText flex flex-col justify-between">
+                            <div class="headerCardTextCreation text-red-600 font-bold w-fit">{{$report->formatted_created_at}}</div>
+                            <div class="headerCardTextNumber text-black font-bold w-fit">{{$report->number}}</div>
+                        </div>
+                        <div class="headerCardFuncBtns w-[50px] h-fit flex justify-between">
+                            <div class="headerCardFuncBtnsEdit">
+                                <img src="{{ Vite::asset('resources/img/pencil.svg') }}"alt="Image">
+                            </div>
+                            <div class="headerCardFuncBtnsDelete">
+                                <img src="{{ Vite::asset('resources/img/trash.svg') }}"alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mainCard w-[330px] h-[115px]">
+                        <div class="mainCardText flex h-fit w-fit">
+                            {{$report->description}}
+                        </div>
+                    </div>
+                    <div class="footerCard w-[330px] h-[20px]">
+                        <div class="footerCardText">
+                            Статус заявления - 
+                        </div>
+                    </div>
+                </div>
+            </div>
+                @endif
+            @endforeach
         </div>
     </main>
     <footer>

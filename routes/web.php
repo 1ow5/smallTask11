@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-
+use App\Models\Report;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,7 +9,8 @@ Route::get('/', function () {
 });
 
 Route::get('/reports', function () {
-    return view('report.index');
+    $reports = Report::all(); // Получаем все отчеты из базы данных
+    return view('report.index', compact('reports')); // Передаем в представление
 })->name('reports.index');
 
 Route::get('/reports/create', function () {
