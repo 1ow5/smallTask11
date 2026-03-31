@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use App\Models\Report;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,8 @@ Route::get('/reports', function () {
 Route::get('/reports/create', function () {
     return view('report.create');
 })->name('reports.create');
+
+Route::delete('/reports/{report}', [ReportController::class, 'destroy'])->name('reports.destroy');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

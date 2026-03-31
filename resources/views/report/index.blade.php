@@ -40,6 +40,12 @@
                                 <img src="{{ Vite::asset('resources/img/pencil.svg') }}"alt="Image">
                             </div>
                             <div class="headerCardFuncBtnsDelete">
+                                
+                            <form action="POST" action="{{route('reports.destroy', $report ->id)}}">
+                                    @method('delete')
+                                    @csrf
+                                    <input type="submit" value="">
+                                </form>
                                 <img src="{{ Vite::asset('resources/img/trash.svg') }}"alt="Image">
                             </div>
                         </div>
