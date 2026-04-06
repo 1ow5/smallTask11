@@ -27,7 +27,7 @@
     <main class="mainWrapper bg-blue-300 flex flex-col  h-screen items-center">
         <div class="mainCreateViolation flex w-[1260px] h-[100px] items-center">
             <form class="formCreateViolation" method="GET" action="/reports/create">
-                <input class="createViolation w-[240px] h-[50px] bg-red-600 rounded-xl text-white" type="submit" value="Создать заявление">
+                <button class="createViolation w-[240px] h-[50px] bg-red-600 rounded-xl text-white" >Создать заявление</button>
             </form>
         </div>
 
@@ -43,7 +43,7 @@
                         </div>
                         <div class="headerCardFuncBtns w-[50px] h-fit flex justify-between">
                             <div class="headerCardFuncBtnsEdit">
-                                <img class=" w-[20px] h-[20px]" src="{{ Vite::asset('resources/img/pencil.svg') }}"alt="Image">
+                                <img class=" w-[20px] h-[20px]" src="{{ Vite::asset('resources/img/pencil.svg') }}" alt="Image">
                             </div>
                             <div class="headerCardFuncBtnsDelete">
                                 

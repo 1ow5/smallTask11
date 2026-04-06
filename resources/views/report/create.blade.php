@@ -24,8 +24,8 @@
             </div>
         </div>
     </header>
-    <main class="mainWrapper bg-blue-300 flex  h-[850px] justify-center">
-        <div class="mainContainer w-[1260px] bg-blue-400 flex flex-wrap justify-between items-center">
+    <main class="mainWrapper bg-blue-300 flex h-screen items-center">
+        <div class="mainCreateViolation flex w-[1260px] h-[100px] items-center">
             
         </div>
     </main>
