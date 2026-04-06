@@ -24,8 +24,14 @@
             </div>
         </div>
     </header>
-    <main class="mainWrapper bg-blue-300 flex  h-[850px] justify-center">
-        <div class="mainContainer w-[1260px] bg-blue-400 flex flex-wrap justify-between items-center">
+    <main class="mainWrapper bg-blue-300 flex flex-col  h-screen items-center">
+        <div class="mainCreateViolation flex w-[1260px] h-[100px] items-center">
+            <form class="formCreateViolation" method="GET" action="/reports/create">
+                <input class="createViolation w-[240px] h-[50px] bg-red-600 rounded-xl text-white" type="submit" value="Создать заявление">
+            </form>
+        </div>
+
+        <div class="mainContainer h-[850px] w-[1260px] bg-blue-400 flex flex-wrap justify-between items-center">
             @foreach ($reports as $report)
             @if($report->id < 7)
             <div class="cardWrapper w-[380px] h-[320px]  flex bg-white rounded-xl justify-center  items-center">
@@ -37,16 +43,16 @@
                         </div>
                         <div class="headerCardFuncBtns w-[50px] h-fit flex justify-between">
                             <div class="headerCardFuncBtnsEdit">
-                                <img src="{{ Vite::asset('resources/img/pencil.svg') }}"alt="Image">
+                                <img class=" w-[20px] h-[20px]" src="{{ Vite::asset('resources/img/pencil.svg') }}"alt="Image">
                             </div>
                             <div class="headerCardFuncBtnsDelete">
                                 
-                            <form action="POST" action="{{route('reports.destroy', $report ->id)}}">
-                                    @method('delete')
+                                <form class="formDelete" method="POST" action="{{route('reports.destroy', $report ->id)}}">
+                                    @method('delete')   
                                     @csrf
-                                    <input type="submit" value="">
+
+                                    <input type="image" src="{{ Vite::asset('resources/img/trash.svg')}}" alt="Удалить">
                                 </form>
-                                <img src="{{ Vite::asset('resources/img/trash.svg') }}"alt="Image">
                             </div>
                         </div>
                     </div>
