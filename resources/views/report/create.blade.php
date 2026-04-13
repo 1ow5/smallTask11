@@ -24,9 +24,17 @@
             </div>
         </div>
     </header>
-    <main class="mainWrapper bg-blue-300 flex h-screen items-center">
-        <div class="mainCreateViolation flex w-[1260px] h-[100px] items-center">
+    <main class="mainWrapper bg-blue-300 flex h-screen justify-center">
+        <div class="mainCreateViolation flex w-[1260px] h-[450px] items-center">
             
+        <form class="formCreate w-full h-[320px] flex flex-col justify-between" method="POST" action="">
+            @csrf
+            <input class="formCarNumber w-[320px] h-[40px]" type="text" id="name" name="name" placeholder="Регистрационный номер авто">
+            <textarea class="formTextareaViolation w-[653px] h-[165px]" placeholder="описание нарушения">
+
+            </textarea>
+            <input class="formCreateBtn w-[245px] h-[50px] bg-red-600 text-white rounded-[5px]" type="submit">
+        </form>
         </div>
     </main>
     <footer>
