@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Report extends Model
 {
     use SoftDeletes;
+    protected $guarded = [];
+    protected $fillable = ['number', 'description'];
+    
     public function getFormattedCreatedAtAttribute()
     {
         return $this->created_at->format('d.m.Y');

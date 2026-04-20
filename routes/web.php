@@ -10,13 +10,16 @@ Route::get('/', function () {
 });
 
 Route::get('/reports', function () {
-    $reports = Report::all(); // Получаем все отчеты из базы данных
+    $reports = Report::latest()->get(); // Получаем все отчеты из базы данных начиная с самых новых
+    $reports = Report::orderBy('created_at', 'asc')->get();
     return view('report.index', compact('reports')); // Передаем в представление
 })->name('reports.index');
 
 Route::get('/reports/create', function () {
     return view('report.create');
 })->name('reports.create');
+
+Route::post('/reports', [ReportController::class, 'store'])->name('reports.store');
 
 Route::delete('/reports/{report}', [ReportController::class, 'destroy'])->name('reports.destroy');
 
